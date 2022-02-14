@@ -14,13 +14,20 @@
       <td><%= topic.title %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.topic_path(@conn, :show, topic) %></span>
-        <span><%= link "Edit", to: Routes.topic_path(@conn, :edit, topic) %></span>
-        <span><%= link "Delete", to: Routes.topic_path(@conn, :delete, topic), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Edit", to: Routes.topic_path(@conn, :edit, topic)%> </span>
+        <%# <span><%= link "Edit", to: Routes.topic_path(@conn, :edit, topic) %>
+        <%# </span> %> 
+        <%# <span><%= link "Delete", to: Routes.topic_path(@conn, :delete, topic), method: :delete, data: [confirm: "Are you sure?"] %> 
+        <%# </span> %> 
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Topic", to: Routes.topic_path(@conn, :new) %></span>
+
+<div class="fixed-action-btn">
+  <%= link to: Routes.topic_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %> 
+    <i class="material-icons">add</i>
+  <%end %>
+</div>
