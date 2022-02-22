@@ -1,15 +1,23 @@
 <h1>Show Topic</h1>
-
 <ul>
-
   <li>
     <strong>Title:</strong>
     <%= @topic.title %>
   </li>
-
 </ul>
 
-<span><%= link "Edit", to: Routes.topic_path(@conn, :edit, @topic) %></span> |
+<div class="input-field">
+  <textarea class="materialize-textarea"></textarea>
+  <button class="btn">Add Comment</button>
+  <ul class="collection">
+  </ul>
+</div>
+
 <span><%= link "Back", to: Routes.topic_path(@conn, :index) %></span>
-<br/>
-<br/>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  window.createSocket(<%= @topic.id %>)
+});
+  
+</script>
