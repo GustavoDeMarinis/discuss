@@ -16,6 +16,11 @@ defmodule DiscussWeb.Endpoint do
   #
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
+
+  socket "/socket", DiscussWeb.UserSocket,
+    websocket: true,
+    longpoll: false
+
   plug Plug.Static,
     at: "/",
     from: :discuss,
